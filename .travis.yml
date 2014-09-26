@@ -13,4 +13,4 @@ before_install:
  
 script:
   - xbuild ./src/HarSharp.sln /property:"Configuration=Debug;Platform=Any CPU" /p:"DefineConstants=TRAVIS_CI"
-  - ./tools/nunit.sh ./src/HarSharp.UnitTests/bin/Debug/HarSharp.UnitTests.dll
+  - .tools/nunit.sh ./src/HarSharp.UnitTests/bin/Debug/HarSharp.UnitTests.dll
