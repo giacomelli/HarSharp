@@ -42,6 +42,7 @@ foreach(var page in har.Log.Pages)
 {
 	Console.WriteLine("Page: {0} loaded in {1} milliseconds", page.Title, page.PageTimings.OnLoad);
 }
+```
 
 ##Code philosophy
 The idea of HarSharp is simplify and promote the use of HAR in .NET codes and keep closest possible to [W3C specification](https://dvcs.w3.org/hg/webperf/raw-file/tip/specs/HAR/Overview.html) , for this reason the below rules were followed during the library development:
