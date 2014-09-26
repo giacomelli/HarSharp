@@ -1,4 +1,5 @@
 #HarSharp
+[![Build Status](https://travis-ci.org/giacomelli/HarSharp.png?branch=master)](https://travis-ci.org/giacomelli/HarSharp)
 
 A small and easy-to-use library to parse HTTP Archive (HAR) format to .NET objects.
 
@@ -40,7 +41,10 @@ var har = HarConvert.Deserialize(harContent);
 
 foreach(var page in har.Log.Pages)
 {
-	Console.WriteLine("Page: {0} loaded in {1} milliseconds", page.Title, page.PageTimings.OnLoad);
+	Console.WriteLine(
+	"Page: {0} loaded in {1} milliseconds", 
+	page.Title, 
+	page.PageTimings.OnLoad);
 }
 ```
 
