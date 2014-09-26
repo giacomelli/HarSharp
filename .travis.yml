@@ -4,7 +4,6 @@ env:
  global:
   - EnableNuGetPackageRestore=true 
  matrix:
-  - MONO_VER="2.10.11"
   - MONO_VER="3.0.12"
 
 before_install:
@@ -14,4 +13,4 @@ before_install:
  
 script:
   - xbuild ./src/HarSharp.sln /property:"Configuration=Debug;Platform=Any CPU" /p:"DefineConstants=TRAVIS_CI"
-  - nunit-console ./src/HarSharp.UnitTests/bin/Debug/HarSharp.UnitTests.dll
+  - ./tools/nunit.sh ./src/HarSharp.UnitTests/bin/Debug/HarSharp.UnitTests.dll
