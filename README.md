@@ -8,7 +8,7 @@ A small and easy-to-use library to parse HTTP Archive (HAR) format to .NET objec
 ##Introduction
 The HTTP Archive (HAR) format as defined in the [W3C Specification](https://dvcs.w3.org/hg/webperf/raw-file/tip/specs/HAR/Overview.html) is an archival format for HTTP transactions that can be used by a web browser to export detailed performance data about web pages it loads.
 
-So, every modern browser nowadays can export HAR with a lot of information about the user navegation. Chrome, for example, can export HAR from Developer Tools, Network tab, right mouse click and "Copy all as HAR".
+So, every modern browser nowadays can export HAR with a lot of information about the user navigation. Chrome, for example, can export HAR from Developer Tools, Network tab, right mouse click and "Copy all as HAR".
 
 What I can do with HAR data?
 Well, there a lot of things I can imagine right now, like:
