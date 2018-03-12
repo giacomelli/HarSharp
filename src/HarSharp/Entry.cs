@@ -29,7 +29,7 @@ namespace HarSharp
         /// This is the sum of all timings available in the timings object.
         /// </remarks>
         /// </summary>
-        public double Time { get; set; }
+        public double? Time { get; set; }
 
         /// <summary>
         /// Gets or sets the detailed info about the request.
