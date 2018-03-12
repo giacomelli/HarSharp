@@ -1,5 +1,4 @@
 # HarSharp
-[![Build Status](https://travis-ci.org/giacomelli/HarSharp.png?branch=master)](https://travis-ci.org/giacomelli/HarSharp)
 
 A small and easy-to-use library to parse HTTP Archive (HAR) format to .NET objects.
 
