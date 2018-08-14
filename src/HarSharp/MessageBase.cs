@@ -42,7 +42,7 @@ namespace HarSharp
         /// <summary>
         /// Gets or sets the size of the request body (POST data payload) in bytes. 
         /// </summary>
-        public int BodySize { get; set; }
+        public int? BodySize { get; set; }
         #endregion
     }
 }
