@@ -17,7 +17,7 @@ namespace HarSharp
         /// <summary>
         /// Initializes a new instance of the <see cref="Request"/> class.
         /// </summary>
-        protected Request()
+        public Request()
         {
             QueryString = new List<QueryStringParameter>();
         }
