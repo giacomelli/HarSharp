@@ -54,7 +54,7 @@ namespace HarSharp
             foreach (var entry in responsesWithPartialRedirectUrl)
             {
                 var requestUrl = entry.Request.Url;
-                entry.Response.RedirectUrl = new Uri($"{requestUrl.GetLeftPart(UriPartial.Authority)}{entry.Response.RedirectUrl.AbsolutePath}");
+                entry.Response.RedirectUrl = new Uri($"{requestUrl.GetLeftPart(UriPartial.Authority)}{entry.Response.RedirectUrl}");
             }
         }
         #endregion

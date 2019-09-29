@@ -16,4 +16,10 @@
     <ProjectReference Include="..\HarSharp\HarSharp.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Include="Hars\*.*">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>  
+  </ItemGroup>
+
 </Project>
