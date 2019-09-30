@@ -10,7 +10,6 @@ namespace HarSharp
     /// </summary>
     public static class HarConvert
     {
-        #region Public methods
         /// <summary>
         /// Deserialize HAR content to a HAR entity.
         /// </summary>
@@ -20,7 +19,7 @@ namespace HarSharp
         {
             if (string.IsNullOrWhiteSpace(harJson))
             {
-                throw new ArgumentNullException("har");
+                throw new ArgumentNullException(nameof(harJson));
             }
 
             var result = JsonConvert.DeserializeObject<Har>(harJson);
@@ -39,9 +38,7 @@ namespace HarSharp
         {
             return Deserialize(File.ReadAllText(fileName));
         }
-        #endregion
 
-        #region Private methods
         /// <summary>
         /// Transform the partial redirect URL to a full one.
         /// </summary>
@@ -56,7 +53,6 @@ namespace HarSharp
                 var requestUrl = entry.Request.Url;
                 entry.Response.RedirectUrl = new Uri($"{requestUrl.GetLeftPart(UriPartial.Authority)}{(entry.Response.RedirectUrl.IsAbsoluteUri ? entry.Response.RedirectUrl.AbsolutePath : entry.Response.RedirectUrl.OriginalString)}");
             }
-        }
-        #endregion
+        }        
     }
 }
