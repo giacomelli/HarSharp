@@ -1,36 +1,54 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HarSharp", "HarSharp\HarSharp.csproj", "{682CD129-204F-47F9-8EA4-472BB517DAEC}"
+# Visual Studio 15
+VisualStudioVersion = 15.0.26124.0
+MinimumVisualStudioVersion = 15.0.26124.0
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{70A15BB4-14C0-449C-B0A7-B06506F2ED43}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HarSharp.UnitTests", "HarSharp.UnitTests\HarSharp.UnitTests.csproj", "{558A1906-D4E2-4DA2-9197-25872488AF31}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HarSharp", "HarSharp\HarSharp.csproj", "{22FBDC05-C3A1-44E1-867E-737E59A3F4E3}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{4CA4FAE9-4F2D-4541-8BCD-BE24ED0E08A4}"
-	ProjectSection(SolutionItems) = preProject
-		.nuget\NuGet.Config = .nuget\NuGet.Config
-		.nuget\NuGet.exe = .nuget\NuGet.exe
-		.nuget\NuGet.targets = .nuget\NuGet.targets
-	EndProjectSection
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HarSharp.UnitTests", "HarSharp.UnitTests\HarSharp.UnitTests.csproj", "{41BAC9B8-18EC-4781-AF33-4D0B820DF9B3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
 		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{682CD129-204F-47F9-8EA4-472BB517DAEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{682CD129-204F-47F9-8EA4-472BB517DAEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{682CD129-204F-47F9-8EA4-472BB517DAEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{682CD129-204F-47F9-8EA4-472BB517DAEC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{558A1906-D4E2-4DA2-9197-25872488AF31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{558A1906-D4E2-4DA2-9197-25872488AF31}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{558A1906-D4E2-4DA2-9197-25872488AF31}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{558A1906-D4E2-4DA2-9197-25872488AF31}.Release|Any CPU.Build.0 = Release|Any CPU
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = HarSharp\HarSharp.csproj
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{22FBDC05-C3A1-44E1-867E-737E59A3F4E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22FBDC05-C3A1-44E1-867E-737E59A3F4E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22FBDC05-C3A1-44E1-867E-737E59A3F4E3}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{22FBDC05-C3A1-44E1-867E-737E59A3F4E3}.Debug|x64.Build.0 = Debug|Any CPU
+		{22FBDC05-C3A1-44E1-867E-737E59A3F4E3}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{22FBDC05-C3A1-44E1-867E-737E59A3F4E3}.Debug|x86.Build.0 = Debug|Any CPU
+		{22FBDC05-C3A1-44E1-867E-737E59A3F4E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22FBDC05-C3A1-44E1-867E-737E59A3F4E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22FBDC05-C3A1-44E1-867E-737E59A3F4E3}.Release|x64.ActiveCfg = Release|Any CPU
+		{22FBDC05-C3A1-44E1-867E-737E59A3F4E3}.Release|x64.Build.0 = Release|Any CPU
+		{22FBDC05-C3A1-44E1-867E-737E59A3F4E3}.Release|x86.ActiveCfg = Release|Any CPU
+		{22FBDC05-C3A1-44E1-867E-737E59A3F4E3}.Release|x86.Build.0 = Release|Any CPU
+		{41BAC9B8-18EC-4781-AF33-4D0B820DF9B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41BAC9B8-18EC-4781-AF33-4D0B820DF9B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41BAC9B8-18EC-4781-AF33-4D0B820DF9B3}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{41BAC9B8-18EC-4781-AF33-4D0B820DF9B3}.Debug|x64.Build.0 = Debug|Any CPU
+		{41BAC9B8-18EC-4781-AF33-4D0B820DF9B3}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{41BAC9B8-18EC-4781-AF33-4D0B820DF9B3}.Debug|x86.Build.0 = Debug|Any CPU
+		{41BAC9B8-18EC-4781-AF33-4D0B820DF9B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41BAC9B8-18EC-4781-AF33-4D0B820DF9B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{41BAC9B8-18EC-4781-AF33-4D0B820DF9B3}.Release|x64.ActiveCfg = Release|Any CPU
+		{41BAC9B8-18EC-4781-AF33-4D0B820DF9B3}.Release|x64.Build.0 = Release|Any CPU
+		{41BAC9B8-18EC-4781-AF33-4D0B820DF9B3}.Release|x86.ActiveCfg = Release|Any CPU
+		{41BAC9B8-18EC-4781-AF33-4D0B820DF9B3}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{22FBDC05-C3A1-44E1-867E-737E59A3F4E3} = {70A15BB4-14C0-449C-B0A7-B06506F2ED43}
+		{41BAC9B8-18EC-4781-AF33-4D0B820DF9B3} = {70A15BB4-14C0-449C-B0A7-B06506F2ED43}
 	EndGlobalSection
 EndGlobal

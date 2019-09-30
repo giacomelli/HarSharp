@@ -1,5 +1,4 @@
 ﻿using System;
-using HarSharp.UnitTests.Hars;
 using NUnit.Framework;
 
 namespace HarSharp.UnitTests
@@ -15,7 +14,7 @@ namespace HarSharp.UnitTests
         [SetUp]
         public void InitializeFixture()
         {
-            m_actual = HarConvert.Deserialize(Resources.Sample);
+            m_actual = HarConvert.DeserializeFromFile(@"Hars\Sample.har");
         }
         #endregion
 

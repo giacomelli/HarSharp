@@ -183,3 +183,4 @@ UpgradeLog*.htm
 FakesAssemblies/
 /.vs
 /src/.vs
+*.orig

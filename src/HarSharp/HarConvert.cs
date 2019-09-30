@@ -1,7 +1,6 @@
 ﻿using System;
 using System.IO;
 using System.Linq;
-using HelperSharp;
 using Newtonsoft.Json;
 
 namespace HarSharp
@@ -17,14 +16,14 @@ namespace HarSharp
         /// </summary>
         /// <param name="har">The HAR content to be deserialized.</param>
         /// <returns>The HAR entity.</returns>
-        public static Har Deserialize(string har)
+        public static Har Deserialize(string harJson)
         {
-            if (string.IsNullOrWhiteSpace(har))
+            if (string.IsNullOrWhiteSpace(harJson))
             {
                 throw new ArgumentNullException("har");
             }
 
-            var result = JsonConvert.DeserializeObject<Har>(har);
+            var result = JsonConvert.DeserializeObject<Har>(harJson);
 
             TransformPartialRedirectUrlToFull(result);
 
@@ -55,9 +54,7 @@ namespace HarSharp
             foreach (var entry in responsesWithPartialRedirectUrl)
             {
                 var requestUrl = entry.Request.Url;
-                entry.Response.RedirectUrl = new Uri("{0}{1}".With(
-                    requestUrl.GetLeftPart(UriPartial.Authority),
-                    entry.Response.RedirectUrl.IsAbsoluteUri ? entry.Response.RedirectUrl.AbsolutePath : entry.Response.RedirectUrl.OriginalString));
+                entry.Response.RedirectUrl = new Uri($"{requestUrl.GetLeftPart(UriPartial.Authority)}{(entry.Response.RedirectUrl.IsAbsoluteUri ? entry.Response.RedirectUrl.AbsolutePath : entry.Response.RedirectUrl.OriginalString)}");
             }
         }
         #endregion
