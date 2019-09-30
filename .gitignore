@@ -184,3 +184,6 @@ FakesAssemblies/
 /.vs
 /src/.vs
 *.orig
+*coverage.opencover.xml
+/tools
+.sonarqube/

@@ -1,4 +1,9 @@
 # HarSharp
+[![Build status](https://ci.appveyor.com/api/projects/status/xq94qa91esm7wq97?svg=true)](https://ci.appveyor.com/project/giacomelli/harsharp)
+[![Quality status](https://sonarcloud.io/api/project_badges/measure?project=HarSharp&metric=alert_status)](https://sonarcloud.io/dashboard?id=HarSharp)
+[![Coverage Status](https://sonarcloud.io/api/project_badges/measure?project=HarSharp&metric=coverage)](https://sonarcloud.io/dashboard?id=HarSharp)
+[![License](http://img.shields.io/:license-MIT-blue.svg)](https://raw.githubusercontent.com/giacomelli/HarSharp/master/LICENSE)
+[![Nuget](https://img.shields.io/nuget/v/HarSharp.svg)](https://www.nuget.org/packages/HarSharp/)
 
 A small and easy-to-use library to parse HTTP Archive (HAR) format to .NET objects.
 
@@ -18,8 +23,9 @@ Well, there a lot of things I can imagine right now, like:
 ## Setup
 
 #### NuGet
-PM> Install-Package HarSharp
-
+```shell
+install-package HarSharp
+```
 
 --------
 
