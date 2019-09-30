@@ -3,23 +3,24 @@ using NUnit.Framework;
 
 namespace HarSharp.UnitTests
 {
-    [TestFixture()]
+    [TestFixture]
     public class HarConvertTest
     {
-        #region Fields
         private Har m_actual;
-        #endregion
 
-        #region Initialize
         [SetUp]
         public void InitializeFixture()
         {
             m_actual = HarConvert.DeserializeFromFile(@"Hars\Sample.har");
         }
-        #endregion
 
-        #region Tests
-        [Test()]
+        [Test]
+        public void Deserialize_Null_Exception()
+        {
+            Assert.Catch<ArgumentNullException>(() => HarConvert.Deserialize(null));
+        }
+
+        [Test]
         public void Deserialize_HarContent_Log()
         {
             var log = m_actual.Log;
@@ -35,9 +36,11 @@ namespace HarSharp.UnitTests
             var pages = log.Pages;
 
             Assert.AreEqual(3, pages.Count);
+
+            Assert.AreEqual("used by unit test", log.Comment);
         }
 
-        [Test()]
+        [Test]
         public void Deserialize_HarContent_Creator()
         {
             var creator = m_actual.Log.Creator;
@@ -45,14 +48,14 @@ namespace HarSharp.UnitTests
             Assert.AreEqual("537.36", creator.Version);
         }
 
-        [Test()]
+        [Test]
         public void Deserialize_HarContent_Browser()
         {
             var browser = m_actual.Log.Browser;
             Assert.IsNull(browser);
         }
 
-        [Test()]
+        [Test]
         public void Deserialize_HarContent_Pages()
         {
             var pages = m_actual.Log.Pages;
@@ -70,7 +73,7 @@ namespace HarSharp.UnitTests
             Assert.IsNull(page.PageTimings.OnLoad);
         }
 
-        [Test()]
+        [Test]
         public void Deserialize_HarContent_Entries()
         {
             var entries = m_actual.Log.Entries;
@@ -91,7 +94,7 @@ namespace HarSharp.UnitTests
             Assert.AreEqual(548.0000000025029, entry.Timings.Ssl);
         }
 
-        [Test()]
+        [Test]
         public void Deserialize_HarContent_Timings()
         {
             var timings = m_actual.Log.Entries[0].Timings;
@@ -111,15 +114,25 @@ namespace HarSharp.UnitTests
             Assert.IsNull(timings.Ssl);
         }
 
-        [Test()]
+        [Test]
         public void Deserialize_HarContent_Cache()
         {
             var cache = m_actual.Log.Entries[0].Cache;
-            Assert.IsNull(cache.AfterRequest);
-            Assert.IsNull(cache.BeforeRequest);
+
+            Assert.AreEqual(new DateTime(2014, 9, 25, 18, 39, 53), cache.BeforeRequest.Expires);
+            Assert.AreEqual(new DateTime(2014, 9, 24, 17, 39, 53), cache.BeforeRequest.LastAccess);
+            Assert.AreEqual("test1", cache.BeforeRequest.ETag);
+            Assert.AreEqual(1, cache.BeforeRequest.HitCount);
+            Assert.IsNotNull(cache.BeforeRequest);
+
+            Assert.IsNotNull(cache.AfterRequest);
+            Assert.AreEqual(new DateTime(2014, 9, 26, 19, 39, 53), cache.AfterRequest.Expires);
+            Assert.AreEqual(new DateTime(2014, 9, 25, 18, 39, 53), cache.AfterRequest.LastAccess);
+            Assert.AreEqual("test2", cache.AfterRequest.ETag);
+            Assert.AreEqual(2, cache.AfterRequest.HitCount);
         }
 
-        [Test()]
+        [Test]
         public void Deserialize_HarContent_Request()
         {
             var request = m_actual.Log.Entries[0].Request;
@@ -130,7 +143,7 @@ namespace HarSharp.UnitTests
             Assert.AreEqual(1542, request.HeadersSize);
         }
 
-        [Test()]
+        [Test]
         public void Deserialize_HarContent_Cookies()
         {
             var cookies = m_actual.Log.Entries[0].Request.Cookies;
@@ -148,7 +161,7 @@ namespace HarSharp.UnitTests
             Assert.IsFalse(cookie.Secure);
         }
 
-        [Test()]
+        [Test]
         public void Deserialize_HarContent_Headers()
         {
             var headers = m_actual.Log.Entries[0].Request.Headers;
@@ -159,14 +172,23 @@ namespace HarSharp.UnitTests
             Assert.AreEqual("gzip,deflate,sdch", header.Value);
         }
 
-        [Test()]
+        [Test]
         public void Deserialize_HarContent_PostData()
         {
             var postData = m_actual.Log.Entries[0].Request.PostData;
             Assert.IsNull(postData);
+
+            postData = m_actual.Log.Entries[25].Request.PostData;
+            Assert.IsNotNull(postData);
+            Assert.AreEqual("text/ping", postData.MimeType);
+            Assert.AreEqual("PING", postData.Text);
+            Assert.AreEqual("PING", postData.Text);
+            Assert.AreEqual(1, postData.Params.Count);
+            Assert.AreEqual("test.txt", postData.Params[0].FileName);
+            Assert.AreEqual("plain/text", postData.Params[0].ContentType);
         }
 
-        [Test()]
+        [Test]
         public void Deserialize_HarContent_QueryString()
         {
             var queryString = m_actual.Log.Entries[1].Request.QueryString;
@@ -177,7 +199,7 @@ namespace HarSharp.UnitTests
             Assert.AreEqual("cr", parameter.Value);
         }
 
-        [Test()]
+        [Test]
         public void Deserialize_HarContent_Response()
         {
             var response = m_actual.Log.Entries[0].Response;
@@ -192,7 +214,7 @@ namespace HarSharp.UnitTests
             Assert.AreEqual("https://www.google.com.br/?gfe_rd=cr&ei=-Q8jVNr2BteqhQTf0oH4Bw", response.RedirectUrl.ToString());
         }
 
-        [Test()]
+        [Test]
         public void Deserialize_HarContent_Content()
         {
             var content = m_actual.Log.Entries[0].Response.Content;
@@ -204,8 +226,7 @@ namespace HarSharp.UnitTests
 
             content = m_actual.Log.Entries[1].Response.Content;
             Assert.IsNull(content.Compression);
-        }
-        #endregion
+        }        
     }
 }
 
