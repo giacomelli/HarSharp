@@ -37,7 +37,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="HelperSharp">
-      <HintPath>..\packages\HelperSharp.0.0.4.1\lib\net35\HelperSharp.dll</HintPath>
+      <HintPath>..\packages\HelperSharp.0.0.4.2\lib\net35\HelperSharp.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
