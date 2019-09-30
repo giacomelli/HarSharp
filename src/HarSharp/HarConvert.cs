@@ -57,7 +57,7 @@ namespace HarSharp
                 var requestUrl = entry.Request.Url;
                 entry.Response.RedirectUrl = new Uri("{0}{1}".With(
                     requestUrl.GetLeftPart(UriPartial.Authority),
-                    entry.Response.RedirectUrl.AbsolutePath));
+                    entry.Response.RedirectUrl.IsAbsoluteUri ? entry.Response.RedirectUrl.AbsolutePath : entry.Response.RedirectUrl.OriginalString));
             }
         }
         #endregion
