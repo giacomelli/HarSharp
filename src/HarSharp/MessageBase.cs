@@ -37,7 +37,7 @@ namespace HarSharp
         /// <summary>
         /// Gets or sets the total number of bytes from the start of the HTTP request message until (and including) the double CRLF before the body.
         /// </summary>
-        public int HeadersSize { get; set; }
+        public int? HeadersSize { get; set; }
 
         /// <summary>
         /// Gets or sets the size of the request body (POST data payload) in bytes. 
